@@ -3,12 +3,19 @@ html, body {
 }
 
 header{
-    background: #000;
+    background: #515814;
+    gap: 10px; 
+    color: #fff;
+}
+
+header div{
+    height: 45px;
     display: flex;
     gap: 10px;
     align-items: center;
-    height: 45px;
-    color: #fff;
+    flex-direction: row;
+    width: 1000px;
+    margin: 0 auto;
 }
 
 header h1{
@@ -22,5 +29,110 @@ header img {
     margin: 0 0 0 20px;
 }
 header span{
-    margin: 0 20px 0 auto;
+    margin: 0 0px 0 auto;
 }
+
+
+main {
+    display: flex;
+    height: 100vh;
+    width: 1000px;
+    margin: 0 auto;
+    gap: 20px
+}
+
+footer{
+    background: #515814A0;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sidebar-right, #sidebar-left {
+    width: 400px;
+    background: #ccc;
+    /* height: 500px; */
+}
+
+#content{
+    width: 560px;
+    background: #515814AA;
+
+}
+.container0{
+    width: 300px;
+    height: 100px;
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 50px;
+}
+
+
+.container{
+    width: 300px;
+    height: 100px;
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 50px;
+}
+
+.grid-block{
+    background: #aca77a;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}
+
+.container2{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: space-around;
+    margin: 50px;
+}
+
+.container3{
+    width: 800px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 50px;
+}
+
+.block{
+    background: #aca77a;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}
+
+.left{
+    background: #aca77a;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    margin-right: auto;
+}
+
+.full{
+    background: #aca77a;
+    width: 200px;
+    height: 50px;
+    margin: 10px;
+}
+
+.end{
+    background: #aca77a;
+    width: 200px;
+    height: 50px;
+    margin-top: auto;
+}
+/* exemplo de uso de css pelo class */
