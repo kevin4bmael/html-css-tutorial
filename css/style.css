@@ -1,21 +1,29 @@
 html, body {
     margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+}
+
+a {
+    text-decoration: none;
 }
 
 header{
-    background: #515814;
-    gap: 10px; 
+    background: #000;
     color: #fff;
 }
 
 header div{
-    height: 45px;
     display: flex;
-    gap: 10px;
-    align-items: center;
     flex-direction: row;
-    width: 1000px;
-    margin: 0 auto;
+    align-items: center;
+    height: 45px;
+}
+
+header a.logotype{
+    display: flex;
+    align-items: center;
+    color: #fff;
+    gap: 10px;
 }
 
 header h1{
@@ -26,41 +34,27 @@ header h1{
 header img {
     width: 30px;
     height: 30px;
-    margin: 0 0 0 20px;
-}
-header span{
-    margin: 0 0px 0 auto;
 }
 
+header nav{
+    margin: 0 0 0 auto;
+}
 
-main {
+header nav ul{
     display: flex;
-    height: 100vh;
-    width: 1000px;
-    margin: 0 auto;
-    gap: 20px
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    gap: 20px;
 }
 
-footer{
-    background: #515814A0;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+header nav ul li a{
+    color: #fff;
+    padding: 0 0 8px 0;
 }
 
-#sidebar-right, #sidebar-left {
-    width: 400px;
-    background: #ccc;
-    /* height: 500px; */
-}
-
-#content{
-    width: 560px;
-    background: #515814AA;
-
-}
-.container0{
+#exec1 {
+    background: #CCC;
     width: 300px;
     height: 100px;
     display: flex;
@@ -68,71 +62,74 @@ footer{
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    margin: 50px;
 }
 
-
-.container{
-    width: 300px;
-    height: 100px;
-    display: flex;
-    gap: 10px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    margin: 50px;
+.bloco {
+    background: #000;
+    width: 60px;
+    height: 60px;   
 }
 
-.grid-block{
-    background: #aca77a;
-    width: 50px;
-    height: 50px;
-    margin: 10px;
-}
-
-.container2{
-    width: 150px;
-    height: 150px;
-    display: flex;
-    justify-content: space-around;
-    margin: 50px;
-}
-
-.container3{
-    width: 800px;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin: 50px;
-}
-
-.block{
-    background: #aca77a;
-    width: 50px;
-    height: 50px;
-    margin: 10px;
-}
-
-.left{
-    background: #aca77a;
-    width: 50px;
-    height: 50px;
-    margin: 10px;
+.rightauto{
     margin-right: auto;
 }
 
-.full{
-    background: #aca77a;
-    width: 200px;
-    height: 50px;
-    margin: 10px;
+.wrapper {
+    width: 1000px;
+    margin: 0 auto;
 }
 
-.end{
-    background: #aca77a;
-    width: 200px;
-    height: 50px;
-    margin-top: auto;
+main {
+    display: flex;
+    gap: 20px;
 }
-/* exemplo de uso de css pelo class */
+
+main.wrapper{
+    margin: 20px auto;
+}
+
+
+#sidebar-right, #sidebar-left {
+    width: 200px;
+    height: 500px;
+}
+
+#content {
+    width: 520px;
+    background: #f1f1f1;
+    height: 500px;
+    padding: 20px;
+}
+
+footer{
+    background: #CCC;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.active{
+    border-bottom: 4px solid #da3c07;
+}
+
+.card img{
+    border-radius: 15px 15px 0 0;
+}
+.card{
+    border: 1px solid #1111;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.card div{
+    padding: 20px;
+}
+
+.card div h3{
+    margin: 0 0 10px 0;
+}
+
+.card div p{
+    margin: 0;
+}
