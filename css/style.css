@@ -40,10 +40,13 @@ header nav{
     margin: 0 0 0 auto;
 }
 
+header nav img{
+    display: none;
+}
+
 header nav ul{
     display: flex;
     padding: 0;
-    margin: 0;
     list-style-type: none;
     gap: 20px;
 }
@@ -68,7 +71,7 @@ header nav ul li button:hover{
 
 #exec1 {
     background: #CCC;
-    width: 300px;
+    width: 270px;
     height: 100px;
     display: flex;
     gap: 10px;
@@ -106,6 +109,7 @@ main.wrapper{
     width: 200px;
     height: 500px;
     padding: 30px 0 0 0;
+    background: #cdcdcd;
 }
 
 #content {
@@ -201,4 +205,78 @@ input[type=text], input[type=email], input[type=date], select{
 form .flex{
     display: flex;
     gap: 15px;
+}
+
+@media screen and (max-width: 1024px) {
+    .wrapper{
+        width: calc(100% - 30px);
+        padding: 0 15px;
+    }
+    #content{
+        width: calc(100% - 480px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main.wrapper{
+        flex-direction: column;
+        gap: 0px;
+    }
+    #sidebar-right, #sidebar-left{
+        width: 100%;
+        height: 200px;
+        background-color: #fff;
+        padding: 0 20px 90px 20px;
+    }
+    #content{
+        order: 1;
+        width: calc(100% - 40px);
+    }
+    #sidebar-left{
+        order: 2;
+    }
+    #sidebar-right{
+        order: 3;
+    }
+    .card{
+        display: flex;
+        border: 1px solid #CCC;
+        margin: 0px 0px 10px;
+    }
+    .card img{
+        border-radius: 15px 15px 15px 15px;
+        /* height: 120px; */
+    }
+    .card div {
+        padding: 20px;
+    }
+}
+
+/* breakpoint especial menu*/
+@media screen and (max-width: 590px) {
+    header nav img {
+        display: block;
+    }
+    header nav ul {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #content{
+        padding: 0;
+        width: 100%;
+    }
+
+    #content h1{
+        font-size: small;
+    }
+
+    .wrapper{
+        width: calc(100% - 20px);
+        padding: 0 10px;
+    }
+    #content div{
+        max-width: 100%;
+    }
 }
