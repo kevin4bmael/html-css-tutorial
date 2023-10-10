@@ -29,6 +29,7 @@ else
 
 // operador ternário
 ligado ? console.log('Ligado') : console.log('Desligado')
+const age = idade < 25 ? 'Jovem' : 'Adulto'
 
 //Concatenação de Strings
 console.log('Meu nome é <div onclick="alert('+"'"+'teste'+"'"+')">' + nome + ' e tenho ' + idade + ' anos')
@@ -37,14 +38,73 @@ console.log('Meu nome é <div onclick="alert('+"'"+'teste'+"'"+')">' + nome + ' 
 console.log(`Meu nome é <div onclick="alert('teste')"> ${nome} e à tenho ${idade} anos`)
 console.log(`Meu nome é ${nome} e tenho ${idade} anos`)
 
-//Funções
+//funções
 function verificaIdade(){
     const inputIdade = document.getElementById('txt-idade') //pega o elemento input
     const pResultado = document.getElementById('resultado')
     const idade = inputIdade.value //pega o valor do input
     console.log(inputIdade.value) 
     if(idade < 25)
-        pResultado.innerHTML = pResultado.innerHTML + '<span style="color: #ff4900">Jovem</span>' //
+        pResultado.innerHTML = pResultado.innerHTML + ' <span style="color: #ff4900">Jovem</span>' //adiciona um texto no elemento final do p
     else
-        pResultado.innerHTML = '<span style="color: #ff4900">Adulto</span>'
+        pResultado.innerHTML = '<span style="color: #ff4900">Adulto</span> ' + pResultado.innerHTML //adiciona um texto no elemento inicio do p
+}
+
+function addProduct(){
+    const inputName = document.getElementById('txt-name')
+    const inputPrice = document.getElementById('txt-price')
+    const inputPhoto = document.getElementById('txt-photo')
+    const divProductList = document.getElementById('product-list')
+    divProductList.innerHTML += `
+        <div class="card-product">
+          <img src="${inputPhoto.value}" alt="${inputName.value}">
+          <div>
+            <h5>${inputName.value}</h5>
+            <span>R$ ${inputPrice.value}</span>
+          </div>
+        </div>
+    `
+    inputName.value = null
+    inputPrice.value = null
+    inputPhoto.value = null
+}
+
+
+
+const v1 = document.getElementById('v1')
+const v2 = document.getElementById('v2')
+
+const soma = (v1, v2) =>{
+
+    som3 = v1 + v2.value
+    return (console.log(som3))
+}
+
+
+const calculadora = (v1, v2, value) =>{
+
+const v1 = document.getElementById('v1')
+const v2 = document.getElementById('v2')
+
+    if (value = '+'){
+
+    }
+}
+
+const sub = (v1, v2) =>{
+
+    sub = v1 - v2
+    return (console.log(sub))
+}
+
+const mul = (v1, v2) =>{
+
+    mul = v1 * v2
+    return (console.log(mul))
+}
+
+const div = (v1, v2) =>{
+
+    div = v1 + v2
+    return (console.log(div))
 }

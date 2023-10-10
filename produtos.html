@@ -31,9 +31,27 @@
     <div id="sidebar-left">Sidebar left</div>
     <div id="content">
       <h1>Produto</h1>
-      <input type="text" id="txt-idade">
+      Idade: <input type="text" id="txt-idade">
       <button onclick="verificaIdade()">Verificar</button>
       <p id="resultado"></p>
+
+      <h3>Novo Produto</h3>
+
+      Nome: <input type="text" id="txt-name"><br>
+      Preço: <input type="text" id="txt-price"><br>
+      Foto: <input type="text" id="txt-photo"><br>
+      <button onclick="addProduct()">Add</button>
+      <div id="product-list">
+        
+      </div>
+
+      <h2> Calculadora </h2>
+      Valor: <input type="number" id="v1"><br>
+      Valor: <input type="number" id="v2"><br>
+      <button onclick="calculadora()" value="+" >Soma</button>
+      <button onclick="calculadora()" value="-" > Subtração</button>
+      <button onclick="calculadora()" value="*" >Multiplicação</button>
+      <button onclick="calculadora()" value="/" >Divisão</button>
     </div>
     <div id="sidebar-right">Sidebar right</div>
   </main>

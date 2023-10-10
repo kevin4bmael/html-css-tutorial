@@ -143,8 +143,10 @@ footer{
     border-radius: 15px 15px 0 0;
 }
 
-.card div{
-    padding: 20px;
+.card > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .card div h3{
@@ -207,6 +209,32 @@ form .flex{
     gap: 15px;
 }
 
+#product-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+.card-product{
+    border: 1px solid #dedede;
+    border-radius: 10px;
+}
+.card-product img{
+    width: 140px;
+    height: 140px;
+    border-radius: 10px 10px 0 0;
+    object-fit: contain;
+}
+.card-product div h5{
+    margin: 0;
+}
+.card-product div span{
+    color: green;
+}
+.card-product > div{
+    padding: 10px;
+}
+
 @media screen and (max-width: 1024px) {
     .wrapper{
         width: calc(100% - 30px);
@@ -220,13 +248,10 @@ form .flex{
 @media screen and (max-width: 768px) {
     main.wrapper{
         flex-direction: column;
-        gap: 0px;
     }
     #sidebar-right, #sidebar-left{
         width: 100%;
         height: 200px;
-        background-color: #fff;
-        padding: 0 20px 90px 20px;
     }
     #content{
         order: 1;
@@ -237,18 +262,6 @@ form .flex{
     }
     #sidebar-right{
         order: 3;
-    }
-    .card{
-        display: flex;
-        border: 1px solid #CCC;
-        margin: 0px 0px 10px;
-    }
-    .card img{
-        border-radius: 15px 15px 15px 15px;
-        /* height: 120px; */
-    }
-    .card div {
-        padding: 20px;
     }
 }
 
@@ -266,10 +279,6 @@ form .flex{
     #content{
         padding: 0;
         width: 100%;
-    }
-
-    #content h1{
-        font-size: small;
     }
 
     .wrapper{
