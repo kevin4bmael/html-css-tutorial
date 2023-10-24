@@ -42,69 +42,134 @@ console.log(`Meu nome é ${nome} e tenho ${idade} anos`)
 function verificaIdade(){
     const inputIdade = document.getElementById('txt-idade') //pega o elemento input
     const pResultado = document.getElementById('resultado')
-    const idade = inputIdade.value //pega o valor do input
-    console.log(inputIdade.value) 
+    const idade = inputIdade.value //pega o valor do input 
     if(idade < 25)
         pResultado.innerHTML = pResultado.innerHTML + ' <span style="color: #ff4900">Jovem</span>' //adiciona um texto no elemento final do p
     else
         pResultado.innerHTML = '<span style="color: #ff4900">Adulto</span> ' + pResultado.innerHTML //adiciona um texto no elemento inicio do p
 }
 
-function addProduct(){
+// function addProduct(){
+//     const inputName = document.getElementById('txt-name')
+//     const inputPrice = document.getElementById('txt-price')
+//     const inputPhoto = document.getElementById('txt-photo')
+//     const divProductList = document.getElementById('product-list')
+//     divProductList.innerHTML += `
+//         <div class="card-product">
+//           <img src="${inputPhoto.value}" alt="${inputName.value}">
+//           <div>
+//             <h5>${inputName.value}</h5>
+//             <span>R$ ${inputPrice.value}</span>
+//           </div>
+//         </div>
+//     `
+//     inputName.value = null // ou ''
+//     inputPrice.value = ''
+//     inputPhoto.value = null
+// }
+
+// Exemplo usando função arrow
+const addProduct = () => {
     const inputName = document.getElementById('txt-name')
     const inputPrice = document.getElementById('txt-price')
     const inputPhoto = document.getElementById('txt-photo')
     const divProductList = document.getElementById('product-list')
-    divProductList.innerHTML += `
-        <div class="card-product">
-          <img src="${inputPhoto.value}" alt="${inputName.value}">
-          <div>
-            <h5>${inputName.value}</h5>
-            <span>R$ ${inputPrice.value}</span>
-          </div>
-        </div>
-    `
-    inputName.value = null
-    inputPrice.value = null
+    divProductList.innerHTML += ``
+
+    produtos.push({
+        nome: inputName.value,
+        preco: inputPrice.value,
+        foto: inputPhoto.value
+    })
+    loadProducts()
+    
+    inputName.value = null // ou ''
+    inputPrice.value = ''
     inputPhoto.value = null
 }
 
-
-
-const v1 = document.getElementById('v1')
-const v2 = document.getElementById('v2')
-
-const soma = (v1, v2) =>{
-
-    som3 = v1 + v2.value
-    return (console.log(som3))
+// exemplo função anônima sendo atribuída a uma constante
+const testeFuncAnonima = function (){
+    console.log('função anônima')
 }
 
+// execução da função
+testeFuncAnonima()
 
-const calculadora = (v1, v2, value) =>{
+// exemplo função arrow sendo atribuída a uma constante
+const funcArrow = () => {
+    console.log('função arrow')
+}
 
-const v1 = document.getElementById('v1')
-const v2 = document.getElementById('v2')
+// execução da função
+funcArrow()
 
-    if (value = '+'){
+// exemplo função arrow com dois parâmetros de entrada e retorno
+const soma = (value1, value2) => {
+    const resultado = value1 + value2
+    return resultado 
+}
 
+// exemplo função arrow com um parâmetro de entrada e retorno
+const soma10 = value1 => value1 + 10
+
+// execução da função
+console.log(soma10(5))
+
+// res recebe o retorno da função
+let res = soma(20, 10)
+
+// usando a constantes como entrada da função
+const v1 = 10
+const v2 = 8
+res = soma(v1, v2)
+console.log(res)
+
+const var1 = '10'
+console.log(parseInt(var1))
+
+//const greetings = (name) => { return `Olá ${name}, seja bem vindo!`}
+const greetings = name => `Olá ${name}, seja bem vindo!`
+console.log(greetings('Renan'))
+
+
+const produtos = [
+    {
+        nome: "Mochila",
+        preco: "R$ 330,00",
+        foto: "url..."
+    },
+    {
+        nome: "Mochila",
+        preco: "R$ 350,00",
+        foto: "url..."
+    },
+    {
+        nome: "Mochila",
+        preco: "R$ 330,00",
+        foto: "url..."
+    },
+    {
+        nome: "Mochila",
+        preco: "R$ 330,00",
+        foto: "url..."
     }
-}
+]
 
-const sub = (v1, v2) =>{
+const loadProducts = () => {
+    const divProductList = document.getElementById('product-list')
+    produtos.map((produto) => {
 
-    sub = v1 - v2
-    return (console.log(sub))
-}
+        divProductList.innerHTML += `
+        <div class="card-product">
+          <img src="${produto.foto}" alt="${produto.nome}">
+          <div>
+            <h5>${produto.nome}</h5>
+            <span>R$ ${produto.preco}</span>
+          </div>
+        </div>
+    `
 
-const mul = (v1, v2) =>{
-
-    mul = v1 * v2
-    return (console.log(mul))
-}
-
-const div = (v1, v2) =>{
-
-    div = v1 + v2
-    return (console.log(div))
+    })
+    
 }

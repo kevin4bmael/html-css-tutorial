@@ -1,99 +1,132 @@
-const pessoa = { //objeto
-    nome: 'Kevin', // propriedade
-    idade: 39,
-    endereco: {
-        rua:{
-            logradouro: 'Rua',
-            nome: 'Dos Bobos'
-        },
-        numero: 0,
-        cep: '11111-234'
+const edereco = {
+    rua: {
+        logradouro: "Rua",
+        nome: 'dos Bobos'
     },
-
-    ola: (nome) => {return `olá ${nome}`}
+    numero: 0,
+    cep: '12665-320'
 }
 
-pessoa.idade = 22 // alterei o valor de uma propriedade do objeto
-pessoa.cidade = 'Caragua' //adicionei uma nova propriedade do objeto
+const pessoa = { // objeto
+    nome: 'Renan Cavichi', //propriedade nome, valor 'Renan Cavichi'
+    idade: 39,
+    endereco: edereco,
+    ola: function () {return `Olá ${this}`}
+}
 
-delete pessoa.cidade
+const joao = pessoa
+joao.nome = 'João'
+joao.idade = 38
 
-console.log(`Bem-vindo ${pessoa.nome}`)
+//console.log(pessoa.ola())
 
-console.log(`Bem-vindo ${pessoa.idade}`)
+pessoa.idade = 40 // alterei o valor de uma propriedade do objeto
+pessoa.cidade = 'Caragua' // adicionei uma nova propriedade no objeto
 
-console.log(pessoa)
+// console.log(pessoa.idade) // exibindo uma propriedade do objeto pessoa
+// console.log(`Bem-vindo ${pessoa.nome}`)
 
+// console.log(pessoa) // exibindo o objeto completo
 
+// delete pessoa.cidade // remove uma propriedade
+// console.log(pessoa)
+// console.log(pessoa.endereco.rua.nome)
+//console.log(pessoa.ola("João"))
+// console.log(typeof pessoa)
 
 const produto = {
-    nome: "SSD Kingston",
-    caracteristicas:{
-        armazenamento: '1 TB',
-        tecnologias:{
-            pcie: '4.0',
-            velocidadeLeitura: '3500MBs',
-            velocidadeEscrita: '2100Mbs',
+    marca: 'Sony',
+    peso: '2kg',
+    nome: 'Caixa de Som',
+    caracteristicas: {
+        dimensoes: {
+            largura: '10 cm',
+            altura: '20 cm',
+            profundidade: '30 cm'
         },
-        preco: 'R$ 259,99'
+        decibeis: '20 db'
     }
 }
 
+// const nome = produto.nome
+// const peso = produto.peso
+// const marca = produto.marca
 
-produto.marca = 'Kingston'
+const { marca, peso, nome } = produto 
 
-delete produto.caracteristicas.tecnologias.pcie
+const produtinho = { marca, peso, nome, material: 'plastico' }
 
-console.log(produto)
-console.log(`Propriedades ${produto.caracteristicas.tecnologias.pcie}`)
+const {decibeis} = produto.caracteristicas
 
-const {nome, preco, caracteristicas} = produto
+console.log(produtinho)
 
-const {tecnologias} = produto.caracteristicas
-
-console.log(tecnologias)
-
+// console.log(nome)
+// console.log(peso)
+// console.log(marca)
+// console.log(produto)
+// console.log("A largura é " + produto.caracteristicas.dimensoes.largura)
 
 const extraProduto = {
     tamanho: 'grande',
     tipo: 'eletronico',
-    material: 'vidro'
+    material: 'titanio',
+    "01 carga": 10
 }
 
-const produtao = { ...produto, ...extraProduto}
+const newProd = {...extraProduto}
+
+console.log(extraProduto)
+
+const produtao = { ...produtinho, ...extraProduto, ...produto.caracteristicas }
 
 console.log(produtao)
 
+const preco = "R$ 9934,00"
+
+//Atividade Objetos
 
 const usuario = {
-    nome: 'Carlinhos Alfandega',
-    cpf: '123.456.789/00',
-    dataNasc: '12/9/20'
+    "nome-completo": "Renan",
+    "02 idade": 39,
+    email: "renancavichi"
 }
 
 const endereco = {
-    rua: 'sete cores da aliança',
-    numero: 70,
-    cep: '08343-103'
-}
+    rua: "Rua Dez",
+    numero: 0,
+    cep: '12665-320'
+} 
 
 const cartao = {
-    numeroDoCartao: '00000-0000-0000-0000',
-    dataValidade: '26/11',
-    cvv: '319'
-
+    nome: "RENAN C",
+    numero: "21313123123",
+    cvv: '456',
+    validade: '10/24'
 }
 
-const criarCompra = {
-
+const compra = {
     ...usuario,
     ...endereco,
-
-    payment: {
-        ...cartao
-    },
-
-    valor: "R$ 50,00"
+    payment: cartao,
+    valor: "R$ 200,00"
 }
 
-console.log(criarCompra)
+console.log(compra)
+
+const errors = {
+    message: "Dados inválidos",
+    fields: {
+        name: [
+            "Nome é requerido",
+            "Nome deve ter mais de 3 caracteres" 
+        ],
+        password: [
+            "A senha deve ter um caractere minúsculo",
+            "A senha deve ter um caractere maiúsculo",
+            "A senha deve ter um caractere especial"
+        ]
+    }
+}
+if(errors?.fields?.name){
+    console.log(errors.fields.name[0])
+}
