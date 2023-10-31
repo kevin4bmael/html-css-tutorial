@@ -173,3 +173,99 @@ const loadProducts = () => {
     })
     
 }
+
+
+const filmes = [{
+    nome: "Crepúsculo",
+    categoria: "Romance",
+    foto: "url..."
+},
+{
+    nome: "A Saga Crepúsculo: Lua Nova",
+    categoria: "Romance",
+    foto: "url..."
+},
+{
+    nome: "Turma da Mônica em Cinegibi, O Filme",
+    categoria: "Animação",
+    foto: "url..."
+},
+{
+    nome: "Van Helsing - O Caçador de Monstros",
+    categoria: "Terror",
+    foto: "url..."
+},
+
+]
+
+const addMovie = () => {
+    const movieName = document.getElementById('movie-name')
+    const movieCat = document.getElementById('movie-cat')
+    const moviePhoto = document.getElementById('movie-photo')
+    const divMoviesList = document.getElementById('movie-list')
+    divMoviesList.innerHTML += ``
+
+    filmes.push({
+        nome: movieName.value,
+        categoria: movieCat.value,
+        foto: moviePhoto.value
+    })
+    
+    
+    movieName.value = null // ou ''
+    movieCat.value = ''
+    moviePhoto.value = null
+}
+
+const loadMovies = () => {
+    const divProductList = document.getElementById('movie-list')
+
+    divProductList.innerHTML = ``
+    
+    filmes.map((filme) => {
+
+        divProductList.innerHTML += `
+        <div class="card-movie">
+          <img src="${filme.foto}" alt="${filme.nome}">
+          <div>
+            <h5>${filme.nome}</h5>
+            <span> ${filme.categoria}</span>
+          </div>
+        </div>
+    `
+
+    })
+    
+}
+
+const deleteMovies = () => {
+    const divProductList = document.getElementById('movie-list')
+    filmes.pop((filme) => {
+
+        divProductList.innerHTML += `
+        <div class="card-movie">
+          <img src="${filme.foto}" alt="${filme.nome}">
+          <div>
+            <h5>${filme.nome}</h5>
+            <span> ${filme.categoria}</span>
+          </div>
+        </div>
+    `
+
+    loadMovies()
+    })
+    
+}
+
+// const deleteMoviesbyName = () => {
+//     const divProductList = document.getElementById('movie-list')
+
+//     if(divProductList?.movieName?.name =)
+//     filmes.map((filme) => {
+
+//         divProductList.innerHTML += ``
+
+//     loadMovies()
+//     })
+    
+// }

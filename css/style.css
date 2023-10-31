@@ -235,6 +235,8 @@ form .flex{
     padding: 10px;
 }
 
+
+
 @media screen and (max-width: 1024px) {
     .wrapper{
         width: calc(100% - 30px);
@@ -288,4 +290,30 @@ form .flex{
     #content div{
         max-width: 100%;
     }
+}
+
+.card-movie{
+    border: 1px solid #dedede;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 220px;
+    display: inline-flex;
+    flex-direction: column;
+}
+.card-movie img{
+    width: 220px;
+    height: 340px;
+    border-radius: 10px 10px 0 0;
+    object-fit: contain;
+}
+.card-movie div h5{
+    margin: 0;
+}
+.card-movie div span{
+    color: green;
+}
+.card-movie > div{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
 }
